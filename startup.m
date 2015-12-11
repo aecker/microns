@@ -1,6 +1,8 @@
 function startup
 
-p = fileparts(fileparts(mfilename('fullpath')));
+p = fileparts(mfilename('fullpath'));
+addpath(p)
+p = fileparts(p);
 addpath(fullfile(p, 'jake'))
 addpath(fullfile(p, 'dimitri'))
 addpath(fullfile(p, 'commons/schemas'))
