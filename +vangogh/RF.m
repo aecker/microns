@@ -51,6 +51,10 @@ classdef RF < dj.Relvar & dj.AutoPopulate
             t1 = t0 - (nBins - 1) * binSize;                                 % start time for stimulus
             t2 = min(caTimes(end), stimTimes(end));                     % end time for both
             movie = permute(interp1(stimTimes', permute(movie,[3 1 2]), (t1 : binSize : t2)', 'linear'), [2 3 1]);
+            
+            % normalize movie
+            movie = bsxfun(@minus, movie, mean(movie, 3));
+            movie = bsxfun(@rdivide, movie, std(movie, [], 3));
             sz = size(movie);
 
             method = fetch1(vangogh.RFMethod & key, 'method');
