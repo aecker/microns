@@ -89,10 +89,11 @@ classdef RF < dj.Relvar & dj.AutoPopulate
                         nBins = 1;
                         % downsample movie by factor of 2 to keep it
                         % tractable
+                        T = numel(trace);
                         x = permute(movie(1 : 2 : end, 1 : 2 : end, offset + (1 : T)), [3 1 2]);
                         sz = size(x);
                         x = zscore(x);
-                        y = zscore(trace(1 : T));
+                        y = zscore(trace);
                         datastruct = formDataStruct(x, y, 1, sz(2 : 3));
                         
                         % STA for initialization
