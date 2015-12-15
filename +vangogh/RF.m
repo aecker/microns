@@ -120,7 +120,7 @@ classdef RF < dj.Relvar & dj.AutoPopulate
                         maxiter = 20;
                         p = minimize(p0(:), fun, maxiter);
                         [~, ~, map] = fun(p);
-                        map = reshape(map, sz(2 : 3));
+                        map = reshape(real(map), sz(2 : 3));
                     otherwise
                         error('The "%s" method is not implemented yet', method)
                 end
