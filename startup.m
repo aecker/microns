@@ -2,6 +2,8 @@ function startup
 
 p = fileparts(mfilename('fullpath'));
 addpath(p)
+addpath(fullfile(p, 'util'))
+addpath(fullfile(p, 'analysis'))
 p = fileparts(p);
 addpath(fullfile(p, 'jake'))
 addpath(fullfile(p, 'dimitri'))

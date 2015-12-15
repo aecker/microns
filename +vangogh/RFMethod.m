@@ -10,6 +10,7 @@ classdef RFMethod < dj.Relvar
         function fill(self)
             self.inserti({
                 1   'STA'
+                2   'ALDsf'
                 })
         end
     end
