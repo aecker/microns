@@ -86,7 +86,6 @@ classdef RF < dj.Relvar & dj.AutoPopulate
                         map = reshape(conv2(fliplr(reshape(movie, sz(1) * sz(2), sz(3))), trace', 'valid'), sz(1), sz(2), []);
                     case 'ALDsf'
                         offset = nBins - 2;
-                        nBins = 1;
                         % downsample movie by factor of 2 to keep it
                         % tractable
                         T = numel(trace);

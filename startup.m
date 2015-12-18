@@ -1,5 +1,7 @@
 function startup
 
+warning off MATLAB:dispatcher:nameConflict
+
 p = fileparts(mfilename('fullpath'));
 addpath(p)
 addpath(fullfile(p, 'util'))
